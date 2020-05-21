@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JsonPipe } from '@angular/common';
+
 
 interface Clientes{
   nombre: string,
@@ -25,21 +25,23 @@ export class ClientesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.clientes.push({
-      nombre: "Julián",
-      apellido: "Pérez Pesce",
-      edad: 35
-    },
-    {
-      nombre: "Maria José",
-      apellido: "Gonzales",
-      edad: 26
-    })
+    // this.clientes.push({
+    //   nombre: "Julián",
+    //   apellido: "Pérez Pesce",
+    //   edad: 35
+    // },
+    // {
+    //   nombre: "Maria José",
+    //   apellido: "Gonzales",
+    //   edad: 26
+    // })
 
-    this.productos.push(
-      {nombre: "Maiz", precio: 30},
-      {nombre: "agua mineral", precio: 80}
-    )
+    // this.productos.push(
+    //   {nombre: "Maiz", precio: 30},
+    //   {nombre: "Agua mineral", precio: 80}
+    // )
+
+    this.clientes = this.clientesLocales;
   }
 
   guardarCliente(){
@@ -63,6 +65,14 @@ export class ClientesComponent implements OnInit {
   }
   eliminarTodo(){
     localStorage.clear();
+  }
+
+  get clientesLocales(): Clientes[]{
+     let clientesLocalesStorage: Clientes[] = JSON.parse(localStorage.getItem('cliente'));
+    if (clientesLocalesStorage == null) {
+      return new Array<Clientes>();
+    }
+     return clientesLocalesStorage;
   }
 
 }
