@@ -3,16 +3,13 @@
         <button class="btn btn-primary" (click)="guardarCliente()">Guardar cliente</button>
         <button class="btn btn-primary" (click)="guardarProducto()">Guardar producto</button>
 
-        <button class="btn btn-success" (click)="leer()">Leer</button>
-
-
         <button class="btn btn-danger" (click)="eliminarCliente()">Eliminar clientes</button>
         <button class="btn btn-danger" (click)="eliminarProducto()">Eliminar productos</button>
         <button class="btn btn-danger" (click)="eliminarTodo()">Eliminar todos</button>
     </div>
 
  <div class="container">
-    <div *ngFor="let cliente of clientes">
+    <div *ngFor="let cliente of clientesLocales">
         <p>Cliente: {{ cliente.nombre }} {{ cliente.apellido }}, edad: {{ cliente.edad }}</p>        
     </div>    
 </div>

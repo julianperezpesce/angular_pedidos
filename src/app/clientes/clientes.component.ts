@@ -57,7 +57,7 @@ export class ClientesComponent implements OnInit {
         edad: 26
       })
 
-    // localStorage.setItem("cliente", JSON.stringify(this.clientes));
+     localStorage.setItem("cliente", JSON.stringify(clientesAgregar));
   }
 
   guardarProducto(){
@@ -80,11 +80,11 @@ export class ClientesComponent implements OnInit {
   }
 
   get clientesLocales(): Clientes[]{
-     let clientesLocalesStorage: Clientes[] = JSON.parse(localStorage.getItem('cliente'));
-    if (clientesLocalesStorage == null) {
+     let clientesLocalStorage: Clientes[] = JSON.parse(localStorage.getItem('cliente'));
+    if (clientesLocalStorage == null) {
       return new Array<Clientes>();
     }
-     return clientesLocalesStorage;
+     return clientesLocalStorage;
   }
 
 }
