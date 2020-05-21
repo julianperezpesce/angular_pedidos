@@ -1,4 +1,4 @@
-<div class="container">
+
     <div class="btn-group">
         <button class="btn btn-primary" (click)="guardarCliente()">Guardar cliente</button>
         <button class="btn btn-primary" (click)="guardarProducto()">Guardar producto</button>
@@ -11,12 +11,13 @@
         <button class="btn btn-danger" (click)="eliminarTodo()">Eliminar todos</button>
     </div>
 
-
-    <div *ngFor="let cliente of clientes" >
+ <div class="container">
+    <div *ngFor="let cliente of clientes">
         <p>Cliente: {{ cliente.nombre }} {{ cliente.apellido }}, edad: {{ cliente.edad }}</p>        
     </div>    
-   
-    <div *ngFor="let producto of productos" >
+</div>
+<div class="container">
+    <div *ngFor="let producto of productos">
         <p>Cliente: {{ producto.nombre }} {{ producto.precio | currency }}</p>           
     </div>
-</div>
+</div>        
