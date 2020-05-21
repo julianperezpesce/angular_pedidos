@@ -50,11 +50,9 @@ export class ClientesComponent implements OnInit {
     localStorage.setItem("producto", JSON.stringify(this.productos));
   }
 
-  leerCliente(){
-    this.clientes = JSON.parse(localStorage.getItem("cliente"));    
-  }
-
-  leerProducto(){
+  leer(){
+    this.clientes = JSON.parse(localStorage.getItem("cliente"));
     this.productos = JSON.parse(localStorage.getItem("producto"));    
   }
+
 }

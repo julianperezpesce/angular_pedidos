@@ -1,7 +1,7 @@
 <div class="container">
 
     <button class="btn btn-primary" (click)="guardarCliente()">Guardar cliente</button>
-    <button class="btn btn-success" (click)="leerCliente()">Leer cliente</button>
+    <button class="btn btn-success" (click)="leer()">Leer cliente</button>
     <div *ngFor="let cliente of clientes" >
         <h2>Cliente: {{ cliente.nombre }} {{ cliente.apellido }}</h2>
         <p>Edad: {{ cliente.edad }} </p>
