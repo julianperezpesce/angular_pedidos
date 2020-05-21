@@ -7,6 +7,11 @@ interface Clientes{
   edad: number
 }
 
+interface Productos{
+  nombre: string,
+  precio: number
+}
+
 @Component({
   selector: 'app-clientes',
   templateUrl: './clientes.component.html',
@@ -15,6 +20,8 @@ interface Clientes{
 export class ClientesComponent implements OnInit {
 
   clientes: Array<Clientes> = new Array<Clientes>();
+  productos: Array<Productos> = new Array<Productos>();
+
   constructor() { }
 
   ngOnInit(): void {
