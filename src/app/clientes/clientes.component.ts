@@ -36,10 +36,10 @@ export class ClientesComponent implements OnInit {
     //   edad: 26
     // })
 
-    this.productos.push(
-      {nombre: "Maiz", precio: 30},
-      {nombre: "agua mineral", precio: 80}
-    )
+    // this.productos.push(
+    //   {nombre: "Maiz", precio: 30},
+    //   {nombre: "agua mineral", precio: 80}
+    // )
   }
 
   guardarCliente(){
@@ -54,5 +54,9 @@ export class ClientesComponent implements OnInit {
     this.clientes = JSON.parse(localStorage.getItem("cliente"));
     this.productos = JSON.parse(localStorage.getItem("producto"));    
   }
+
+  eliminarCliente(){}
+  eliminarProducto(){}
+  eliminarTodo(){}
 
 }
