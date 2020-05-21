@@ -35,13 +35,26 @@ export class ClientesComponent implements OnInit {
     //   apellido: "Gonzales",
     //   edad: 26
     // })
+
+    this.productos.push(
+      {nombre: "Maiz", precio: 30},
+      {nombre: "agua mineral", precio: 80}
+    )
   }
 
   guardarCliente(){
     localStorage.setItem("cliente", JSON.stringify(this.clientes));
   }
 
+  guardarProducto(){
+    localStorage.setItem("producto", JSON.stringify(this.productos));
+  }
+
   leerCliente(){
     this.clientes = JSON.parse(localStorage.getItem("cliente"));    
+  }
+
+  leerProducto(){
+    this.productos = JSON.parse(localStorage.getItem("producto"));    
   }
 }
