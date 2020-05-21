@@ -9,12 +9,12 @@
     </div>
 
  <div class="container">
-    <div *ngFor="let cliente of clientesLocales">
+    <div *ngFor="let cliente of clientesLocales" class="clientesLocales">
         <p>Cliente: {{ cliente.nombre }} {{ cliente.apellido }}, edad: {{ cliente.edad }}</p>        
     </div>    
 </div>
 <div class="container">
-    <div *ngFor="let producto of productosAgregar">
+    <div *ngFor="let producto of productosLocales" class="productosLocales">
         <p>Cliente: {{ producto.nombre }} {{ producto.precio | currency }}</p>           
     </div>
 </div>        
