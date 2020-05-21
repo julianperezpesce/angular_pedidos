@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JsonPipe } from '@angular/common';
 
 interface Clientes{
   nombre: string,
@@ -31,5 +32,9 @@ export class ClientesComponent implements OnInit {
 
   guardarCliente(){
     localStorage.setItem("cliente", JSON.stringify(this.clientes));
+  }
+
+  leerCliente(){
+    this.clientes = JSON.parse(localStorage.getItem("cliente"));    
   }
 }
