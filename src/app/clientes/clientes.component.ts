@@ -19,28 +19,11 @@ interface Productos{
 })
 export class ClientesComponent implements OnInit {
 
-  // clientes: Array<Clientes> = new Array<Clientes>();
-  productos: Array<Productos> = new Array<Productos>();
+  productosAgregar: Array<Productos> = new Array<Productos>();
 
   constructor() { }
 
   ngOnInit(): void {
-    // this.clientes.push({
-    //   nombre: "Julián",
-    //   apellido: "Pérez Pesce",
-    //   edad: 35
-    // },
-    // {
-    //   nombre: "Maria José",
-    //   apellido: "Gonzales",
-    //   edad: 26
-    // })
-
-    // this.productos.push(
-    //   {nombre: "Maiz", precio: 30},
-    //   {nombre: "Agua mineral", precio: 80}
-    // )
-
     // this.clientes = this.clientesLocales;
   }
 
@@ -61,7 +44,12 @@ export class ClientesComponent implements OnInit {
   }
 
   guardarProducto(){
-    localStorage.setItem("producto", JSON.stringify(this.productos));
+    let productosAgregar: Array<Productos> = new Array<Productos>();
+    productosAgregar.push(
+        {nombre: "Maiz", precio: 30},
+        {nombre: "Agua mineral", precio: 80}
+      )
+    localStorage.setItem("producto", JSON.stringify(productosAgregar));
   }
 
   // leer(){
@@ -86,5 +74,13 @@ export class ClientesComponent implements OnInit {
     }
      return clientesLocalStorage;
   }
+
+  get productosLocales(): Productos[]{
+    let productoLocalStorage: Productos[] = JSON.parse(localStorage.getItem('producto'));
+   if (productoLocalStorage == null) {
+     return new Array<Productos>();
+   }
+    return productoLocalStorage;
+ }
 
 }
