@@ -19,7 +19,7 @@ interface Productos{
 })
 export class ClientesComponent implements OnInit {
 
-  clientes: Array<Clientes> = new Array<Clientes>();
+  // clientes: Array<Clientes> = new Array<Clientes>();
   productos: Array<Productos> = new Array<Productos>();
 
   constructor() { }
@@ -41,21 +41,33 @@ export class ClientesComponent implements OnInit {
     //   {nombre: "Agua mineral", precio: 80}
     // )
 
-    this.clientes = this.clientesLocales;
+    // this.clientes = this.clientesLocales;
   }
 
   guardarCliente(){
-    localStorage.setItem("cliente", JSON.stringify(this.clientes));
+    let clientesAgregar: Array<Clientes> = new Array<Clientes>();
+    clientesAgregar.push({
+        nombre: "Julián",
+        apellido: "Pérez Pesce",
+        edad: 35
+      },
+      {
+        nombre: "Maria José",
+        apellido: "Gonzales",
+        edad: 26
+      })
+
+    // localStorage.setItem("cliente", JSON.stringify(this.clientes));
   }
 
   guardarProducto(){
     localStorage.setItem("producto", JSON.stringify(this.productos));
   }
 
-  leer(){
-    this.clientes = JSON.parse(localStorage.getItem("cliente"));
-    this.productos = JSON.parse(localStorage.getItem("producto"));    
-  }
+  // leer(){
+  //   this.clientes = JSON.parse(localStorage.getItem("cliente"));
+  //   this.productos = JSON.parse(localStorage.getItem("producto"));
+  // }
 
   eliminarCliente(){
     localStorage.removeItem("cliente");
