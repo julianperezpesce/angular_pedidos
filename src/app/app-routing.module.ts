@@ -4,12 +4,14 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { ProductosComponent } from './productos/productos.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { HomeComponent } from './home/home.component';
+import { AgregarClientesComponent } from './agregar-clientes/agregar-clientes.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'productos', component: ProductosComponent},
   {path: 'pedidos', component: PedidosComponent},
+  {path: 'agregar-cliente', component: AgregarClientesComponent}
 ];
 
 @NgModule({
