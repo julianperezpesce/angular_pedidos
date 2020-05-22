@@ -27,6 +27,7 @@ export class AgregarClientesComponent implements OnInit {
   agregar(){
     this.cliente = this.formularioAgregar.value as Clientes;
     this.clienteService.agregarClienteLocalStorage(this.cliente);
+    this.formularioAgregar.reset();
   }
 
 }
