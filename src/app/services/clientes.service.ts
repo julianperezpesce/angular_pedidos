@@ -11,6 +11,7 @@ export class ClientesService {
 
   agregarClienteLocalStorage(cliente: Clientes){
     let clientesAnteriores: Clientes[] = this.clientesLocalStorage;
+    cliente.clienteId = clientesAnteriores.length +1;
     clientesAnteriores.push(cliente);
 
     localStorage.setItem('clientes', JSON.stringify(clientesAnteriores))
@@ -21,6 +22,7 @@ export class ClientesService {
     if (obtenerClientesDeLocalStorage == null) {
       return new Array<Clientes>();
     }
+    return obtenerClientesDeLocalStorage;
   }
 
 }
