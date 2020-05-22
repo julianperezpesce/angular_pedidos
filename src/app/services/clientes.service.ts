@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Clientes } from '../models/clientes';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +7,11 @@ import { Injectable } from '@angular/core';
 export class ClientesService {
 
   constructor() { }
+
+
+  agregarClienteLocalStorage(cliente: Clientes){
+    localStorage.setItem('clientes', JSON.stringify(cliente))
+  }
 }
+
+
