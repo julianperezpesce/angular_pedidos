@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Clientes } from '../models/clientes';
 
 @Component({
   selector: 'app-agregar-clientes',
@@ -9,7 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class AgregarClientesComponent implements OnInit {
 
   formularioAgregar: FormGroup;
-
+  cliente: Clientes= new Clientes();
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -19,6 +20,10 @@ export class AgregarClientesComponent implements OnInit {
       direccion: ['', Validators.required]
 
     })
+  }
+
+  agregar(){
+    this.cliente = this.formularioAgregar.value as Clientes;
   }
 
 }
