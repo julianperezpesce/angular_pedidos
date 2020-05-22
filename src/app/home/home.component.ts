@@ -15,4 +15,12 @@ export class HomeComponent implements OnInit {
     this.clientes = this.clientesServicio.clientesLocalStorage;
   }
 
+  buscarCliente(event){
+    let buscarNombre: string = event.target.value;
+   this.clientes = this.clientesServicio.clientesLocalStorage.filter(x=> {
+     return x.nombre.toLowerCase().includes(buscarNombre);
+   })
+    
+  }
+
 }
