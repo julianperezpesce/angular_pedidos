@@ -1,1 +1,21 @@
-<p>productos works!</p>
+<div class="container mt-5"> 
+    <form  class="form-group">        
+        <input class="form-control" type="text" (input)="buscarProducto($event)" placeholder="Buscar producto">
+    </form>
+    <button class="btn btn-primary" [routerLink]="['/agregar-cliente']" >Agregar producto</button>
+
+    <div class="row mt-5">
+        <div class="col-sm-3 " >
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"> Nombre de producto </h5> 
+                  <h6 class="card-subtitle">ID:  </h6>                 
+                  <p class="card-text"> Descripción </p>
+                  <p class="card-text"> Precio </p>
+                  <a href="#" class="card-link">Agregar</a>
+                  <a href="#" class="card-link">Eliminar</a>
+                </div>
+              </div>
+        </div>        
+    </div>    
+</div>
