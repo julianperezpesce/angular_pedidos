@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Productos } from '../models/productos';
+import { ProductosService } from '../services/productos.service';
 
 @Component({
   selector: 'app-agregar-productos',
@@ -8,8 +10,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class AgregarProductosComponent implements OnInit {
   formularioAgregar: FormGroup;
-
-  constructor(private fb: FormBuilder) { }
+  producto: Productos = new Productos();
+  constructor(private fb: FormBuilder, public productoService: ProductosService) { }
   
   ngOnInit(): void {
     this.formularioAgregar = this.fb.group({
@@ -20,7 +22,9 @@ export class AgregarProductosComponent implements OnInit {
   }
 
   agregar(){
-    
+    this.producto = this.formularioAgregar.value as Productos;
+    this.productoService.agregarProductoLocalStorage(this.producto);
+    this.formularioAgregar.reset();
   }
 
 }
