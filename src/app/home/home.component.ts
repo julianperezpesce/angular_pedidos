@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientesService } from '../services/clientes.service';
 import { Clientes } from '../models/clientes';
+import { PedidosService } from '../services/pedidos.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ import { Clientes } from '../models/clientes';
 })
 export class HomeComponent implements OnInit {
   clientes: Array<Clientes> = new Array<Clientes>();
-  constructor(public clientesServicio: ClientesService) { }
+
+  constructor(public clientesServicio: ClientesService, public pedidosService: PedidosService) { }
 
   ngOnInit(): void {
     this.clientes = this.clientesServicio.clientesLocalStorage;
