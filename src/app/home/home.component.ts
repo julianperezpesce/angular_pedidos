@@ -28,7 +28,9 @@ export class HomeComponent implements OnInit {
   }
 
   irAProductos(cliente: Clientes){
-
+    this.pedidosService.pedido.clienteId = cliente.clienteId;
+    this.pedidosService.pedido.nombreCliente = `${cliente.nombre} ${cliente.apellido}`;
+    this.route.navigateByUrl('/productos');
   }
 
 
