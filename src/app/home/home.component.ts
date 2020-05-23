@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientesService } from '../services/clientes.service';
 import { Clientes } from '../models/clientes';
 import { PedidosService } from '../services/pedidos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,9 @@ import { PedidosService } from '../services/pedidos.service';
 export class HomeComponent implements OnInit {
   clientes: Array<Clientes> = new Array<Clientes>();
 
-  constructor(public clientesServicio: ClientesService, public pedidosService: PedidosService) { }
+  constructor(public clientesServicio: ClientesService, 
+    public pedidosService: PedidosService,
+    public route: Router) { }
 
   ngOnInit(): void {
     this.clientes = this.clientesServicio.clientesLocalStorage;
@@ -21,8 +24,13 @@ export class HomeComponent implements OnInit {
     let buscarNombre: string = event.target.value;
    this.clientes = this.clientesServicio.clientesLocalStorage.filter(x=> {
      return x.nombre.toLowerCase().includes(buscarNombre.toLowerCase());
-   })
-    
+   })    
   }
+
+  irAProductos(cliente: Clientes){
+
+  }
+
+
 
 }
