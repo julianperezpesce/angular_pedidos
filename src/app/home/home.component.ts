@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   buscarCliente(event){
     let buscarNombre: string = event.target.value;
    this.clientes = this.clientesServicio.clientesLocalStorage.filter(x=> {
-     return x.nombre.toLowerCase().includes(buscarNombre);
+     return x.nombre.toLowerCase().includes(buscarNombre.toLowerCase());
    })
     
   }
