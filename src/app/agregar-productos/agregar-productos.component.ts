@@ -16,7 +16,10 @@ export class AgregarProductosComponent implements OnInit {
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
       precio: ['', Validators.required]
-    })
+    })    
+  }
+
+  agregar(){
     
   }
 
