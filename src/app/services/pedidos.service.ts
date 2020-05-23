@@ -7,10 +7,9 @@ import { PedidoDetalle } from '../models/pedidoDetalle';
   providedIn: 'root'
 })
 export class PedidosService {
-  
+  pedido: Pedidos = new Pedidos();
 
   constructor() { }
 
-  
-
+ 
 }

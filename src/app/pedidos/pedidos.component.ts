@@ -11,21 +11,21 @@ import { PedidoDetalle } from '../models/pedidoDetalle';
 })
 export class PedidosComponent implements OnInit {
 
-  pedido: Pedidos = new Pedidos();
+  // pedido: Pedidos = new Pedidos();
   constructor(public pedidosService: PedidosService) { }
 
   ngOnInit(): void {
     
   }
 
-  agregarProducto(producto: Productos){
-    let pedidoDetalle: PedidoDetalle = new PedidoDetalle();
-    pedidoDetalle.cantidad = 1;
-    pedidoDetalle.nombre = producto.nombre;
-    pedidoDetalle.precio = producto.precio;
-    pedidoDetalle.productoId = producto.productoId;
-    pedidoDetalle.total = pedidoDetalle.cantidad * pedidoDetalle.precio;
-    this.pedido.pedidoDetalle.push(pedidoDetalle);
-  }
+  // agregarProducto(producto: Productos){
+  //   let pedidoDetalle: PedidoDetalle = new PedidoDetalle();
+  //   pedidoDetalle.cantidad = 1;
+  //   pedidoDetalle.nombre = producto.nombre;
+  //   pedidoDetalle.precio = producto.precio;
+  //   pedidoDetalle.productoId = producto.productoId;
+  //   pedidoDetalle.total = pedidoDetalle.cantidad * pedidoDetalle.precio;
+  //   this.pedido.pedidoDetalle.push(pedidoDetalle);
+  // }
 
 }
