@@ -1,38 +1,27 @@
 <div class="container">
     <div class="cliente">
-        <h5>Cliente: </h5>
-        <h6>Total: </h6>
+        <h5>Cliente: {{this.pedidosService.pedido.nombreCliente}} </h5>
+        <h6>Total: {{this.pedidosService.pedido.totalDelPedido | currency }} </h6>
     </div>
     <div class="detalle">
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-                <th scope="col">Handle</th>
+                <th scope="col">ProductoId</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Total</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              <tr *ngFor="let pedido of this.pedidosService.pedido.pedidoDetalle">
+                <td> {{ pedido.productoId }} </td>
+                <td> {{ pedido.nombre }} </td>
+                <td> {{ pedido.cantidad }} </td>
+                <td> {{ pedido.precio | currency }} </td>
+                <td> {{ pedido.total | currency }} </td>
+              </tr>              
             </tbody>
           </table>
     </div>
