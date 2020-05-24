@@ -20,6 +20,7 @@ export class PedidosComponent implements OnInit {
   calcularTotal(posicion){
 
     this.pedidosService.pedido.actualizarCantidad(posicion);
+    this.pedidosService.guardarLocalStorage();
   }
 
 
