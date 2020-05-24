@@ -32,11 +32,17 @@ export class Pedidos{
                 x.productoId == producto.productoId);
             this.pedidoDetalle[posicion].cantidad++;
             this.pedidoDetalle[posicion].total = this.pedidoDetalle[posicion].cantidad * this.pedidoDetalle[posicion].precio;       
-        }else{
+        } else {
             this.pedidoDetalle.push(pedidoDetalle);
-        }        
-            
-        
+        }
+        this.actualizarTotal();        
+    }
+
+    private actualizarTotal(){
+        this.totalDelPedido = 0;
+        for(let producto of this.pedidoDetalle){
+            this.totalDelPedido = this.totalDelPedido + producto.total;
+        }
     }
     
 }
