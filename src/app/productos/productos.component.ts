@@ -12,7 +12,8 @@ export class ProductosComponent implements OnInit {
 
   productos: Array<Productos> = new Array<Productos>();
 
-  constructor(public productosServicio: ProductosService, public pedidosService: PedidosService) { }
+  constructor(public productosServicio: ProductosService,
+     public pedidosService: PedidosService) { }
 
   ngOnInit(): void {
     this.productos = this.productosServicio.productosLocalStorage;
@@ -24,6 +25,12 @@ export class ProductosComponent implements OnInit {
     this.productos = this.productosServicio.productosLocalStorage.filter(x=>{
       return x.nombre.toLowerCase().includes(buscarNombre.toLowerCase());
     })
+  }
+
+  agregar(producto: Productos){
+    this.pedidosService.pedido.agregarProductos(producto);
+    console.log(this.pedidosService.pedido);
+    
   }
 
 

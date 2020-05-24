@@ -17,14 +17,26 @@ export class Pedidos{
         this.pedidoDetalle = new Array<PedidoDetalle>();
     }
     
-    agregarProductos(producto:Productos){
+    agregarProductos(producto: Productos){
         let pedidoDetalle: PedidoDetalle = new PedidoDetalle();
         pedidoDetalle.cantidad = 1;
         pedidoDetalle.nombre = producto.nombre;
         pedidoDetalle.productoId= producto.productoId;
         pedidoDetalle.precio = producto.precio;
         pedidoDetalle.total = pedidoDetalle.cantidad * pedidoDetalle.precio;
-        this.pedidoDetalle.push(pedidoDetalle);
+        
+        let existe: number = this.pedidoDetalle.filter(
+            x=> x.productoId == producto.productoId).length;
+        if (existe > 0) {
+            let posicion: number = this.pedidoDetalle.findIndex(x=>
+                x.productoId == producto.productoId);
+            this.pedidoDetalle[posicion].cantidad++;
+            this.pedidoDetalle[posicion].total = this.pedidoDetalle[posicion].cantidad * this.pedidoDetalle[posicion].precio;       
+        }else{
+            this.pedidoDetalle.push(pedidoDetalle);
+        }        
+            
+        
     }
     
 }
