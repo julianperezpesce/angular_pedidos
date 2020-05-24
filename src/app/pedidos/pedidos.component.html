@@ -1,13 +1,13 @@
 <div class="container">
     <div class="cliente">
-        <h5>Cliente: {{this.pedidosService.pedido.nombreCliente}} </h5>
-        <h6>Total: {{this.pedidosService.pedido.totalDelPedido | currency }} </h6>
+        <h5>Cliente: {{ this.pedidosService.pedido.nombreCliente }} </h5>
+        <h6>Total: {{ this.pedidosService.pedido.totalDelPedido | currency }} </h6>
     </div>
     <div class="detalle">
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">ProductoId</th>
+                <th scope="col">Id</th>
                 <th scope="col">Producto</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">Precio</th>
