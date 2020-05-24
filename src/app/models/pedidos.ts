@@ -40,9 +40,12 @@ export class Pedidos{
 
     private actualizarTotal(){
         this.totalDelPedido = 0;
-        for(let producto of this.pedidoDetalle){
+        // for(let producto of this.pedidoDetalle){
+        //     this.totalDelPedido = this.totalDelPedido + producto.total;
+        // }
+        this.pedidoDetalle.forEach(producto=>{
             this.totalDelPedido = this.totalDelPedido + producto.total;
-        }
+        })
     }
     
 }
