@@ -27,5 +27,9 @@ export class PedidosComponent implements OnInit {
     this.pedidosService.guardarPedido();
   }
 
+  eliminar(posicion: number){
+    this.pedidosService.pedido.pedidoDetalle.splice(posicion, 1);
+    this.pedidosService.guardarLocalStorage();
+  }
 
 }
