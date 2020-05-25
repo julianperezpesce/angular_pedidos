@@ -23,5 +23,9 @@ export class PedidosComponent implements OnInit {
     this.pedidosService.guardarLocalStorage();
   }
 
+  guardar(){
+    this.pedidosService.guardarPedido();
+  }
+
 
 }

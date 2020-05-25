@@ -24,4 +24,12 @@ export class PedidosService {
     return pedidoLocalStorage;
   }
 
+  guardarPedido(){
+    let listadoPedidos: Pedidos[] = new Array<Pedidos>();
+    listadoPedidos.push(this.pedido)
+    localStorage.setItem('pedidos', JSON.stringify(listadoPedidos));
+  }
+
+  
+
 }
