@@ -29,6 +29,7 @@ export class PedidosService {
     listadoPedidos = this.listadoPedidoEnLocalStorage;
     listadoPedidos.push(this.pedido)
     localStorage.setItem('pedidos', JSON.stringify(listadoPedidos));
+    localStorage.removeItem('ultimoPedido')
   }
 
   get listadoPedidoEnLocalStorage(){
