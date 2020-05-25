@@ -39,7 +39,7 @@ export class PedidosService {
     if (pedidos == null) {
       return new Array<Pedidos>();
     }
-    return pedidos;
+    return pedidos.sort((a,b)=> b.pedidoId - a.pedidoId);
   }
 
 }

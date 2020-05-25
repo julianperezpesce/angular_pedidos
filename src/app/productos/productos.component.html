@@ -11,9 +11,8 @@
                   <h5 class="card-title"> {{producto.nombre}} </h5> 
                   <h6 class="card-subtitle"> {{producto.productoId}}  </h6>                 
                   <p class="card-text"> {{producto.descripcion}} </p>
-                  <p class="card-text"> {{producto.precio | currency}} </p>
-                  <a (click)="agregar(producto)" class="card-link">Agregar</a>
-                  <a href="#" class="card-link">Eliminar</a>
+                  <p class="card-text"> {{producto.precio | currency}} </p>                  
+                  <button (click)="agregar(producto)" class="btn btn-primary">Agregar</button>
                 </div>
               </div>
         </div>        

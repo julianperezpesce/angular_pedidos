@@ -10,9 +10,8 @@
                 <div class="card-body">
                   <h5 class="card-title"> {{cliente.nombre}} {{ cliente.apellido }} </h5> 
                   <h6 class="card-subtitle">ID: {{ cliente.clienteId }} </h6>                 
-                  <p class="card-text"> {{ cliente.direccion }} </p>
-                  <a (click)="irAProductos(cliente)" class="card-link">Agregar</a>
-                  <a href="#" class="card-link">Eliminar</a>
+                  <p class="card-text"> {{ cliente.direccion }} </p>                  
+                  <button (click)="irAProductos(cliente)" class="btn btn-primary">Seleccionar</button>
                 </div>
               </div>
         </div>        

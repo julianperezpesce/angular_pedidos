@@ -30,7 +30,7 @@ export class ProductosComponent implements OnInit {
   agregar(producto: Productos){
     this.pedidosService.pedido.agregarProductos(producto);
     this.pedidosService.guardarLocalStorage();
-    console.log(this.pedidosService.pedido);
+    alert('Producto agregado');
     
   }
 
